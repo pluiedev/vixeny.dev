@@ -1,0 +1,44 @@
+.bar-graph {
+  margin: 1rem 0;
+
+  .bar-graph-header {
+    display: flex;
+
+    .tab {
+      background-color: var(--brand-500);
+      padding: 0.25rem 0.5rem;
+      width: fit-content;
+      transition: 0.25s background-color;
+
+      &:hover, &:focus, &:active, &.active {
+        background-color: var(--brand-400);
+      }
+
+      &.active {
+        font-weight: 500;
+      }
+
+      + .tab {
+        border-inline-start: 2px solid var(--brand-700);
+      }
+    }
+  }
+
+  .bar-graph-body {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap: 0 1rem;
+
+    .bar::before {
+      content: "";
+      display: inline-block;
+      width: calc(var(--length) / var(--max-length) * (100% - 8rem));
+      background-color: currentColor;
+      height: 75%;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+  }
+}

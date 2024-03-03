@@ -1,0 +1,65 @@
+@use "../../styles/components/bar-graph.scss";
+@use "../../styles/components/button.scss";
+@use "../../styles/components/container.scss";
+@use "../../styles/components/title-card.scss";
+@use "../../styles/components/title.scss";
+
+section {
+  padding: 3rem 0rem;
+
+  .container {
+    display: grid;
+    gap: 0.5rem 3rem;
+    grid-template-rows: 6rem auto;
+
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "title cont"
+      "desc  cont";
+
+    .description {
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      &.hsplit {
+        grid-template-columns: 1fr 7fr;
+        grid-template-areas:
+          "title desc"
+          "cont  cont";
+
+        .description {
+          margin-bottom: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .title {
+    font-size: 3.5rem;
+    @media (min-width: 1024px) {
+      font-size: 4rem;
+    }
+
+    grid-area: title;
+    display: flex;
+    align-items: center;
+  }
+  .description {
+    font-weight: 350;
+    grid-area: desc;
+
+    p + p {
+      margin-top: 1rem;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: cont;
+  }
+}

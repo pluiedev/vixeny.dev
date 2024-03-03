@@ -1,0 +1,14 @@
+.title {
+  font-size: 5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 2rem;
+
+  > * { margin-bottom: 0.75rem; }
+}
+

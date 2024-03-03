@@ -1,0 +1,13 @@
+.title-card {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  > img { max-width: 16rem; }
+  > figcaption {
+    max-width: 48rem;
+  }
+}

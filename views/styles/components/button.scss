@@ -1,0 +1,19 @@
+.buttons {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.button {
+  background-color: var(--brand-400);
+  color: var(--brand-800);
+  font-weight: 500;
+  padding: 0 1rem;
+  border-radius: 9999px;
+
+  transition: 0.25s background-color;
+
+  &:hover, &:focus, &:active, &.active {
+    background-color: var(--brand-200);
+  }
+}
+

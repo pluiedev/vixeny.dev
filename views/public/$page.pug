@@ -1,0 +1,102 @@
+extends ../layouts/layout.pug
+
+append head
+  title Vixeny
+  link(rel="stylesheet", href="/styles/index.css")
+
+block content
+  section
+    figure.title-card
+      img(src="/assets/img/logo.svg" alt="Vixeny logo")
+
+      figcaption.text-left.brand-200
+        h1.title.brand-300 Vixeny
+        div.tagline
+          p
+            | Unleash the #[strong.gold power] of
+            | #[strong.brand-300 functional purity] in your websites.
+          .buttons
+            | Try now for
+            a.button(href="/docs/install#deno") Deno
+            a.button(href="/docs/install#bun") Bun
+            a.button(href="/docs/install") &hellip;
+
+  section.bg-brand-700#safe
+    .container
+      h2.title Safe
+      .description
+        p.
+          Thanks to the use of purely functional, strongly typed paradigms,
+          the core of Vixeny is incredibly robust against external errors.
+        p.
+          Blah blah blah blah more advertisement text
+      .content
+
+  section.bg-brand-600#fast
+    .container.hsplit
+      h2.title Fast
+      .description
+        p.
+          Vixeny is driven by purely functional JavaScript code that performs minimal
+          arbitrary side effects, which allows the compiler to safely and quickly
+          simplify it into speedy, safe native code for maximally performant execution.
+      .content
+        .bar-graph(style="--max-length: 25.4;")
+          .bar-graph-header.brand-100
+            .tab.active Time to render
+            .tab Time to render (dynamic)
+            .tab Time to response
+          .bar-graph-body.bg-brand-700.brand-300
+            strong.gold Vixeny
+            .bar.gold(style="--length: 4.3;") 4.3ms
+            | Lume
+            .bar(style="--length: 6.9;") 6.9ms
+            | Eleventy
+            .bar(style="--length: 15.2;") 15.2ms
+            | Jekyll
+            .bar(style="--length: 25.4;") 25.4ms
+
+  section.bg-brand-500.brand-100#multiplatform
+    .container.hsplit
+      h2.title Multiplatform
+      .description.hsplit
+        p.
+          Vixeny supports a variety of JavaScript runtimes and platforms.
+          Its core is runtime-agnostic and can be adapted to work with runtime-specific
+          APIs if needed, instead of being chained down to a specific ecosystem.
+
+  section.bg-brand-400.brand-100#extensible
+    .container
+      h2.title Extensible
+      .description
+        p.
+          Every aspect of Vixeny can be extended via its robust plugin system.
+        p.
+          An assortment of pre-configured plugins are available via the
+          #[a(href="http://npmjs.com/package/vixeny-prespective"): code vixeny-prespective] package,
+          providing integrations with common utilities and markup languages such as
+          Sass, PostCSS, Remark, Pug, EJS, JSX, and more.
+
+      .content
+        pre.bg-brand-600.brand-200: code.
+          import { remarkStaticServer } from 'vixeny-prespective';
+          import { unified } from "unified";
+          import rehypeDocument from "rehype-document";
+
+          const staticServer = {
+            type: "fileServer",
+            name: "/",
+            path: "./views/public/",
+            slashIs: "$main",
+            template: [
+              remarkStaticServer(unified)({
+                uses: [
+                  [rehypeDocument, { title: "👋🌍" }],
+                ]
+              })
+            ],
+          };
+
+
+
+

@@ -1,0 +1,28 @@
+{
+  "name": "vixeny.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bun run main.ts",
+    "dev": "bun run watcher.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "esbuild": "^0.20.1",
+    "pug": "^3.0.2",
+    "rehype-document": "^7.0.3",
+    "rehype-format": "^5.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "sass": "^1.71.0",
+    "unified": "^11.0.4",
+    "vixeny": "latest",
+    "vixeny-prespective": "latest"
+  }
+}

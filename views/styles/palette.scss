@@ -1,0 +1,33 @@
+@use "sass:map";
+
+$brand-color-shades: (
+  100: #dbd4ea,
+  200: #b9add6,
+  300: #8472ac,
+  400: #6f5c9b,
+  500: #503e7e,
+  600: #2d1d53,
+  700: #1c0f3a,
+  800: #160e27,
+);
+
+$palette: ("gold": #ffbc26);
+
+@each $weight, $color in $brand-color-shades {
+  $palette: map.set($palette, "brand-#{$weight}", $color);
+}
+
+:root {
+  @each $name, $color in $palette {
+    --#{$name}: #{$color};
+  }
+}
+
+@each $name, $color in $palette {
+  .#{$name} {
+    color: var(--#{$name}) !important;
+  }
+  .bg-#{$name} {
+    background-color: var(--#{$name}) !important;
+  }
+}
