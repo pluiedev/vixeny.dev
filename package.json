@@ -22,7 +22,7 @@
     "remark-rehype": "^11.1.0",
     "sass": "^1.71.0",
     "unified": "^11.0.4",
-    "vixeny": "latest",
+    "vixeny": "^0.0.946",
     "vixeny-prespective": "latest"
   }
 }
