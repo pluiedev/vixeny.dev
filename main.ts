@@ -1,12 +1,13 @@
 import { vixeny, wrap } from "vixeny";
 import root from "./src/paths/root.ts";
-import { globalOptions, staticServer } from "./src/globalOptions.ts";
+import { globalOptions, staticServer, docs } from "./src/globalOptions.ts";
 
 Bun.serve({
   fetch: vixeny(globalOptions)([
     ...wrap(globalOptions)().union(root.unwrap()).unwrap(),
     //with static server
     staticServer,
+    docs
   ]),
 });
 

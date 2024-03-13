@@ -29,5 +29,13 @@ const staticServer = {
   template: [pugP, sassP, typescriptP, remarkP],
 };
 
+const docs = {
+  type: "fileServer",
+  name: "/docs",
+  path: "./node_modules/vixeny/docs/",
+  slashIs: "$page",
+  template: [pugP, sassP, typescriptP, remarkP],
+};
+
 assertOptions(globalOptions);
-export { cryptoKey, globalOptions, staticServer };
+export { cryptoKey, globalOptions, staticServer , docs};
